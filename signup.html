@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="User Management System Logo" class="logo">
+            <h1>User Management System</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">Create Your Account</h2>
+
+        <div class="form-container">
+            <div class="form-image">
+                <img src="img/signup-illustration.jpg" alt="Sign Up Illustration">
+            </div>
+            <div class="form-content">
+                <h3>Sign Up</h3>
+                <p>Please fill in the form below to create your account.</p>
+                
+                <?php
+                session_start();
+                
+                // Display general error message if it exists
+                if (isset($_SESSION['signup_error'])) {
+                    echo '<p class="error-message">' . $_SESSION['signup_error'] . '</p>';
+                    unset($_SESSION['signup_error']);
+                }
+                
+                // Get form data if it exists
+                $fullname = isset($_SESSION['signup_form_data']['fullname']) ? $_SESSION['signup_form_data']['fullname'] : '';
+                $email = isset($_SESSION['signup_form_data']['email']) ? $_SESSION['signup_form_data']['email'] : '';
+                $username = isset($_SESSION['signup_form_data']['username']) ? $_SESSION['signup_form_data']['username'] : '';
+                
+                // Get errors if they exist
+                $errors = isset($_SESSION['signup_errors']) ? $_SESSION['signup_errors'] : [];
+                
+                // Clear session data
+                unset($_SESSION['signup_form_data']);
+                unset($_SESSION['signup_errors']);
+                ?>
+                
+                <form method="POST" action="process_signup.php">
+                    <div class="form-group">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars($fullname); ?>" required>
+                        <?php if (isset($errors['fullname'])) echo '<p class="error-message">' . $errors['fullname'] . '</p>'; ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                        <?php if (isset($errors['email'])) echo '<p class="error-message">' . $errors['email'] . '</p>'; ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required>
+                        <?php if (isset($errors['username'])) echo '<p class="error-message">' . $errors['username'] . '</p>'; ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <?php if (isset($errors['password'])) echo '<p class="error-message">' . $errors['password'] . '</p>'; ?>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <?php if (isset($errors['confirm_password'])) echo '<p class="error-message">' . $errors['confirm_password'] . '</p>'; ?>
+                    </div>
+                    
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>User Management System is a web application that allows users to register and manage their profiles.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@usermanagement.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 User Management System. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
