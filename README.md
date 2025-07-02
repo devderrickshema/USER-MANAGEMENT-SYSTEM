@@ -1,10 +1,10 @@
-# USER MANAGEMENT SYSTEM
+# USER-MANAGEMENT-SYSTEM
 
 A simple, responsive web application built with HTML5, CSS, PHP, and MySQL that allows users to sign up, log in, and manage their personal profiles.
 
 ## Features
 
-- User registration and authentication
+- User registration with validation
 - Secure login system
 - Profile management
 - Responsive design for all devices
@@ -20,18 +20,24 @@ A simple, responsive web application built with HTML5, CSS, PHP, and MySQL that 
 
 ## Installation
 
-1. Clone this repository
-2. Import the `users_table.sql` file into your MySQL database
-3. Configure database connection in `includes/db_connect.php`
-4. Run the application on a PHP-enabled web server (e.g., XAMPP, WAMP)
+1. Clone the repository:
+   ```
+   git clone https://github.com/Denzo31/USER-MANAGEMENT-SYSTEM.git
+   ```
+
+2. Import the database:
+   - Create a database in MySQL
+   - Import the `users_table.sql` file
+
+3. Configure database connection:
+   - Update the database credentials in `includes/db_connect.php`
+
+4. Run in your local server (XAMPP, WAMP, etc.)
 
 ## Screenshots
 
-The application features a user-friendly interface with:
-- Modern UI design
-- Responsive layout
-- Interactive elements
+The application includes user management features with a clean, modern interface.
 
 ## License
 
-This project is available for personal and educational use. 
+This project is open source. 
