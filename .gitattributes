@@ -1,0 +1,16 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Language detection
+*.php linguist-language=PHP
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+*.sql linguist-language=SQL
+
+# Documentation
+*.md linguist-documentation=false
+README.md linguist-documentation=false
+
+# Exclude files from GitHub language statistics
+# users_table.sql linguist-vendored=false 
