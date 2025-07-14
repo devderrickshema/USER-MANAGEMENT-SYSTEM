@@ -1,6 +1,6 @@
 # USER-MANAGEMENT-SYSTEM
 
-A simple, responsive web application built with HTML5, CSS, PHP, and MySQL that allows users to sign up, log in, and manage their personal profiles.
+A simple and responsive web application built with HTML5, CSS, PHP, and MySQL that allows users to sign up, log in, and manage their personal profiles.
 
 ## Features
 
@@ -18,7 +18,7 @@ A simple, responsive web application built with HTML5, CSS, PHP, and MySQL that 
 - MySQL
 - JavaScript
 
-## Installation
+## Installations
 
 1. Clone the repository:
    ```
