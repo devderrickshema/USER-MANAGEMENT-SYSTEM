@@ -22,7 +22,7 @@ A simple, responsive web application built with HTML5, CSS, PHP, and MySQL that 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Denzo31/USER-MANAGEMENT-SYSTEM.git
+   git clone https://github.com/devderrickshema/USER-MANAGEMENT-SYSTEM.git
    ```
 
 2. Import the database:
